@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <uv.h>
+#include "leveldb/db.h"
 
 uv_loop_t *loop;
 
@@ -29,6 +30,7 @@ void luvdbie_read(uv_stream_t *client, ssize_t nread, uv_buf_t buf) {
     uv_write_t *req = (uv_write_t *) malloc(sizeof(uv_write_t));
     req->data = (void*) buf.base;
     buf.len = nread;
+    
     uv_write(req, client, &buf, 1, luvdbie_write);
 }
 
@@ -49,6 +51,12 @@ void on_new_connection(uv_stream_t *server, int status) {
 }
 
 int main() {
+    // Open database
+    leveldb::DB* db;
+    leveldb::Options options;
+    options.create_if_missing = true;
+    leveldb::Status status = leveldb::DB::Open(options, "/tmp/testdb", &db);
+    
     loop = uv_default_loop();
 
     uv_tcp_t server;

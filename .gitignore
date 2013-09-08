@@ -1,6 +1,7 @@
 luvdbie
 node_modules/
 build/
+db/*
 libleveldb.so
 libleveldb.a
 *.sln
