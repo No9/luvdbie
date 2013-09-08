@@ -1,5 +1,7 @@
 # luvdbie 
 
+[![Build Status](https://travis-ci.org/No9/luvdbie.png?branch=master)](https://travis-ci.org/No9/luvdbie)
+
 ## Introduction 
 
 Luvdbie (pronounced loved by) is a leveldb instance wrapped by libuv tcp-server.
