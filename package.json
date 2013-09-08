@@ -1,0 +1,18 @@
+{
+  "name": "luvdbie",
+  "version": "0.1.0",
+  "description": "A libuv tcp server",
+  "main": "index.js",
+  "scripts": {
+    "test": "tests/tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/No9/luvdbie.git"
+  },
+  "author": "anton whalley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/No9/luvdbie/issues"
+  }
+}
