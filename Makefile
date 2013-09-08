@@ -1,12 +1,10 @@
 luvdbie: main.c libuv/libuv.a
-	gcc -I libuv/include \
--lrt -lm -lpthread -o \
-luvdbie main.c \
-libuv/libuv.a -lpthread
+	gcc -I deps/libuv/include -o luvdbie main.c \
+deps/libuv/libuv.a -lrt -lm -lpthread
  
 libuv/libuv.a:
-	$(MAKE) -C libuv
+	$(MAKE) -C deps/libuv
  
 clean:
-	rm libuv/libuv.a
+	rm deps/libuv/libuv.a
 	rm luvdbie
